@@ -4,11 +4,13 @@ import matplotlib.pyplot as plt
 
 
 # sampling rate
-sampling_rate = 40
+sampling_rate = 100
 # freq
-freq = 2
+freq = 4 # the number of oscillation
 # samples                         
-samples = 40
+samples = 200
+
+amplitude = 100
 
 # np.arange Return evenly spaced values within a given interval.
 # Returns arange : ndarray (n dimensional array)
@@ -16,7 +18,7 @@ samples = 40
 x = np.arange(samples)
 
 # sine wave https://en.wikipedia.org/wiki/Sine_wave
-y = 100 * np.sin(2 * np.pi * freq * x / sampling_rate)
+y = amplitude * np.sin(2 * np.pi * freq * x / sampling_rate)
 
 # write file
 write("example.wav", samples, y)
